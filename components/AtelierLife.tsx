@@ -25,7 +25,7 @@ const moments = [
 
 export default function AtelierLife() {
   return (
-    <section className="relative py-24 md:py-32 bg-cream/60">
+    <section className="relative pt-12 pb-24 md:pt-16 md:pb-32">
       <div className="container-custom">
         <SectionHeader
           eyebrow="Atölyeden Anlar"

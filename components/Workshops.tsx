@@ -59,10 +59,7 @@ const workshops = [
 
 export default function Workshops() {
   return (
-    <section id="atolye" className="relative py-24 md:py-32 bg-cream/70">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-ivory to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-ivory to-transparent" />
-
+    <section id="atolye" className="relative pt-24 pb-12 md:pt-32 md:pb-16">
       <div className="container-custom">
         <SectionHeader
           eyebrow="Atölye Programları"
@@ -151,25 +148,6 @@ export default function Workshops() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-10 rounded-2xl border border-dashed border-lavender-300 bg-lavender-50/60 p-6 text-center"
-        >
-          <p className="font-serif text-ink">
-            Özel grup & kurumsal atölyeler, doğum günü ve bekarlığa veda etkinlikleri
-            için{" "}
-            <Link
-              href="/#iletisim"
-              className="text-lavender-700 underline decoration-gold/70 underline-offset-4"
-            >
-              bize yazın
-            </Link>
-            .
-          </p>
-        </motion.div>
       </div>
     </section>
   );

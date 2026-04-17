@@ -14,9 +14,9 @@ import SectionHeader from "./SectionHeader";
 const services = [
   {
     icon: BookHeart,
-    title: "Dekupaj Defterler",
-    desc: "Antika görünümlü, kapaklarına özenle dekupaj uygulanmış hatıra defterleri ve kutu defterler.",
-    tag: "Signature"
+    title: "Dekupaj Kutular",
+    desc: "Antika görünümlü, kapaklarına özenle dekupaj uygulanmış hatıra kutuları.",
+    tag: "Sıgnature"
   },
   {
     icon: PaintBucket,
@@ -47,7 +47,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="koleksiyon" className="relative py-24 md:py-32">
+    <section id="koleksiyon" className="relative py-24 md:py-16">
       <div className="container-custom">
         <SectionHeader
           eyebrow="Ne Yapıyoruz"
@@ -83,13 +83,6 @@ export default function Services() {
                   {s.title}
                 </h3>
                 <p className="mt-3 prose-quiet">{s.desc}</p>
-
-                <div className="mt-6 flex items-center gap-3 text-lavender-700">
-                  <span className="h-px w-8 bg-lavender-300 transition group-hover:w-14 group-hover:bg-lavender-700" />
-                  <span className="font-sans text-xs uppercase tracking-widest">
-                    Detaylar
-                  </span>
-                </div>
               </div>
             </motion.article>
           ))}

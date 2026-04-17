@@ -30,7 +30,7 @@ const pillars = [
 
 export default function About() {
   return (
-    <section id="hakkimizda" className="relative py-24 md:py-32 texture-paper">
+    <section id="hakkimizda" className="relative py-24 md:py-32">
       <div className="container-custom grid gap-14 lg:grid-cols-12 lg:gap-16 items-start">
         <div className="lg:col-span-5 lg:sticky lg:top-28">
           <SectionHeader
@@ -103,7 +103,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mt-8 rounded-[1.25rem] border border-gold/30 bg-gradient-to-br from-cream to-ivory p-8 md:p-10 shadow-inset"
+            className="mt-8 rounded-[1.25rem] border border-gold/30 bg-cream/60 p-8 md:p-10 shadow-inset"
           >
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
               <div className="font-script text-6xl leading-none text-gold-dark md:text-7xl">

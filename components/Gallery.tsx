@@ -7,8 +7,8 @@ import SectionHeader from "./SectionHeader";
 const items = [
   {
     src: "/gallery/kardelen-1.png",
-    title: "Lila Hatıra Defteri",
-    tag: "Signature · Defter"
+    title: "Zaman ve Güller Kitap Kutusu",
+    tag: "Signature · Kutu"
   },
   {
     src: "/gallery/kardelen-4.png",
@@ -72,7 +72,7 @@ const more: MoreItem[] = [
 
 export default function Gallery() {
   return (
-    <section id="galeri" className="relative py-24 md:py-32">
+    <section id="galeri" className="relative py-24 md:py-16">
       <div className="container-custom">
         <SectionHeader
           eyebrow="Galeri"
@@ -128,6 +128,7 @@ export default function Gallery() {
               title={items[2].title}
               tag={items[2].tag}
               aspect="aspect-[4/5]"
+              imgClassName="scale-[1.25] object-[50%_45%]"
             />
           </motion.div>
 
@@ -143,6 +144,7 @@ export default function Gallery() {
               title={items[3].title}
               tag={items[3].tag}
               aspect="aspect-[4/5]"
+              imgClassName="scale-[1.3] object-[50%_40%]"
             />
           </motion.div>
         </div>
@@ -235,13 +237,15 @@ function GalleryFrame({
   title,
   tag,
   aspect,
-  featured = false
+  featured = false,
+  imgClassName = ""
 }: {
   src: string;
   title: string;
   tag: string;
   aspect: string;
   featured?: boolean;
+  imgClassName?: string;
 }) {
   return (
     <div className={`relative w-full ${aspect}`}>
@@ -251,7 +255,7 @@ function GalleryFrame({
         alt={title}
         fill
         sizes="(min-width: 1024px) 60vw, 100vw"
-        className="object-cover transition duration-700 group-hover:scale-[1.04]"
+        className={`object-cover transition duration-700 group-hover:scale-[1.04] ${imgClassName}`}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-lavender-900/70 via-lavender-900/0 to-transparent" />
 

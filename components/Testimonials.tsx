@@ -24,7 +24,7 @@ const quotes = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-24 md:py-32 bg-lavender-50/60">
+    <section className="relative py-24 md:py-18">
       <div className="container-custom">
         <SectionHeader
           eyebrow="Konuklarımız"
