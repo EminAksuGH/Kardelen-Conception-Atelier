@@ -6,3 +6,6 @@ out
 .DS_Store
 *.log
 initial.txt
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+.env.local.example

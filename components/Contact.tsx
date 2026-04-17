@@ -103,8 +103,8 @@ export default function Contact() {
         <div className="mt-14 grid gap-10 lg:grid-cols-12">
           {/* Info column */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="lg:col-span-5 flex flex-col gap-6"
@@ -205,19 +205,17 @@ export default function Contact() {
                 <span className="mt-8 block h-px w-full bg-gradient-to-r from-transparent via-ivory/25 to-transparent" />
 
                 {/* Social */}
-                <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <div className="ml-auto flex items-center gap-2">
-                    <SocialLink
-                      href="https://www.instagram.com/atolyekardelen"
-                      Icon={Instagram}
-                      label="Instagram"
-                    />
-                    <SocialLink
-                      href="https://www.facebook.com/kardelenconception"
-                      Icon={Facebook}
-                      label="Facebook"
-                    />
-                  </div>
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-2 md:justify-end md:gap-3">
+                  <SocialLink
+                    href="https://www.instagram.com/atolyekardelen"
+                    Icon={Instagram}
+                    label="Instagram"
+                  />
+                  <SocialLink
+                    href="https://www.facebook.com/kardelenconception"
+                    Icon={Facebook}
+                    label="Facebook"
+                  />
                 </div>
               </div>
             </div>
@@ -291,14 +289,14 @@ export default function Contact() {
                   href="https://maps.app.goo.gl/dYYQapvYQCDQ5gBv8"
                   target="_blank"
                   rel="noreferrer"
-                  className="group/link flex flex-1 items-center justify-center gap-2 whitespace-nowrap px-3 py-4 font-sans text-[0.7rem] uppercase tracking-widest2 text-lavender-800 transition hover:bg-lavender-50 hover:text-lavender-900"
+                  className="group/link flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap px-2 py-4 font-sans text-[0.64rem] uppercase tracking-widest text-lavender-800 transition hover:bg-lavender-50 hover:text-lavender-900 sm:gap-2 sm:px-3 sm:text-[0.7rem] sm:tracking-widest2"
                 >
-                  <MapPin size={14} strokeWidth={1.8} />
+                  <MapPin size={14} strokeWidth={1.8} className="shrink-0" />
                   Haritada Aç
                   <ArrowUpRight
                     size={13}
                     strokeWidth={1.8}
-                    className="opacity-60 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 group-hover/link:opacity-100"
+                    className="hidden shrink-0 opacity-60 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 group-hover/link:opacity-100 sm:inline"
                   />
                 </a>
                 <span
@@ -309,14 +307,14 @@ export default function Contact() {
                   href="https://www.google.com/maps/dir/?api=1&destination=Kardelen+Conception+Atelier+Çankaya+Ankara"
                   target="_blank"
                   rel="noreferrer"
-                  className="group/link flex flex-1 items-center justify-center gap-2 whitespace-nowrap px-3 py-4 font-sans text-[0.7rem] uppercase tracking-widest2 text-gold-dark transition hover:bg-gold/10 hover:text-gold-dark"
+                  className="group/link flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap px-2 py-4 font-sans text-[0.64rem] uppercase tracking-widest text-gold-dark transition hover:bg-gold/10 hover:text-gold-dark sm:gap-2 sm:px-3 sm:text-[0.7rem] sm:tracking-widest2"
                 >
-                  <Navigation size={13} strokeWidth={1.8} />
+                  <Navigation size={13} strokeWidth={1.8} className="shrink-0" />
                   Yol Tarifi Al
                   <ArrowUpRight
                     size={13}
                     strokeWidth={1.8}
-                    className="opacity-60 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 group-hover/link:opacity-100"
+                    className="hidden shrink-0 opacity-60 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 group-hover/link:opacity-100 sm:inline"
                   />
                 </a>
               </div>
@@ -325,8 +323,8 @@ export default function Contact() {
 
           {/* Form column */}
           <motion.form
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             onSubmit={handleSubmit}
@@ -494,14 +492,14 @@ export default function Contact() {
 
               {/* Footer */}
               <div className="mt-8 border-t border-lavender-100/80 pt-6">
-                <div className="flex flex-wrap items-center gap-4 sm:flex-nowrap">
-                  <p className="flex min-w-0 flex-1 items-center gap-2 font-sans text-[0.78rem] leading-relaxed text-charcoal/65">
+                <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:gap-4">
+                  <p className="flex min-w-0 flex-1 items-start gap-2 font-sans text-[0.78rem] leading-relaxed text-charcoal/65 sm:items-center">
                     <ShieldCheck
                       size={14}
                       strokeWidth={1.7}
-                      className="shrink-0 text-gold-dark"
+                      className="mt-0.5 shrink-0 text-gold-dark sm:mt-0"
                     />
-                    <span className="truncate">
+                    <span>
                       Mesaj göndererek{" "}
                       <span className="text-lavender-800">gizlilik politikasını</span>{" "}
                       kabul etmiş olursunuz.
@@ -510,7 +508,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={submit.status === "submitting"}
-                    className="group relative ml-auto inline-flex shrink-0 items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-br from-lavender-700 via-lavender-800 to-lavender-900 px-6 py-3.5 font-sans text-xs uppercase tracking-widest2 text-ivory shadow-[0_15px_35px_-15px_rgba(84,56,114,0.6)] transition hover:shadow-[0_20px_45px_-15px_rgba(84,56,114,0.8)] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:shadow-[0_15px_35px_-15px_rgba(84,56,114,0.6)]"
+                    className="group relative inline-flex w-full shrink-0 items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-br from-lavender-700 via-lavender-800 to-lavender-900 px-6 py-3.5 font-sans text-xs uppercase tracking-widest2 text-ivory shadow-[0_15px_35px_-15px_rgba(84,56,114,0.6)] transition hover:shadow-[0_20px_45px_-15px_rgba(84,56,114,0.8)] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:shadow-[0_15px_35px_-15px_rgba(84,56,114,0.6)] sm:ml-auto sm:w-auto"
                   >
                     <span
                       aria-hidden

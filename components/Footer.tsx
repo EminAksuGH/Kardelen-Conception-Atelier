@@ -17,7 +17,7 @@ export default function Footer() {
             <div>
               <div className="font-display text-2xl tracking-wide">Kardelen</div>
               <div className="font-sans text-[0.62rem] uppercase tracking-widest2 text-gold-light">
-                Conception · Atelier
+                Conceptıon · Atelıer
               </div>
             </div>
           </div>

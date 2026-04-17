@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   Cormorant_Garamond,
   Playfair_Display,
@@ -57,6 +57,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "tr_TR"
   }
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#FAF6EF"
 };
 
 export default function RootLayout({

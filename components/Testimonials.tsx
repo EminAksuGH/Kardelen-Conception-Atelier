@@ -6,19 +6,19 @@ import SectionHeader from "./SectionHeader";
 
 const quotes = [
   {
-    name: "Elif A.",
+    name: "Merve K.",
     role: "Atölye Katılımcısı",
     text: "Atölyeye bir arkadaşımla geldim; bir terapi seansı gibiydi. Hem çok şey öğrendim hem de paha biçilmez bir eserle çıktım. Mekân, detaylar, atmosfer… her şey çok özeldi."
   },
   {
     name: "Emin A.",
     role: "Özel Sipariş",
-    text: "Arkadaşıma hediye olarak özel bir kitap kutususu tasarlattım. Hem tasarım süreci hem de sonuç müthişti. Her kitabını okurken o günü hatırlatıyor."
+    text: "Arkadaşıma doğum günü hediyesi olarak özel tasarım bir kitap kutusu yaptırdım. Hem tasarım süreci hem de ortaya çıkan sonuç gerçekten harikaydı. Şimdi her kitabını okuduğunda o özel günü hatırlıyor."
   },
   {
-    name: "Merve K.",
-    role: "Kurumsal Etkinlik",
-    text: "Kurumumuz için düzenlediğimiz bir etkinliğe özel atölye hazırladılar. Ekibimiz hâlâ o günden bahsediyor. Zarafet ve profesyonellik bir arada."
+    name: "Burcu Y.",
+    role: "Atölye Katılımcısı",
+    text: "Yıllardır aradığım huzuru bu atölyede buldum. Ellerimle bir şey üretmenin verdiği tatmin bambaşkaymış. Detaylara gösterilen özen ve sıcak atmosfer için teşekkürler."
   }
 ];
 
@@ -32,7 +32,7 @@ export default function Testimonials() {
           script="güzel sözler."
         />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-20 grid gap-12 md:mt-14 md:gap-6 md:grid-cols-3">
           {quotes.map((q, i) => (
             <motion.figure
               key={q.name}
@@ -40,9 +40,12 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.08 }}
-              className="relative rounded-[1.25rem] border border-lavender-100 bg-ivory p-8 shadow-soft"
+              className="relative rounded-[1.25rem] border border-lavender-100 bg-ivory px-7 pb-8 pt-10 shadow-soft md:p-8"
             >
-              <div className="absolute -top-6 left-8 font-script text-7xl leading-none text-gold-dark select-none">
+              <div
+                aria-hidden
+                className="absolute -top-8 left-6 font-script text-[5.5rem] leading-none text-gold-dark/90 select-none md:-top-6 md:left-8 md:text-7xl"
+              >
                 “
               </div>
               <div className="flex gap-1 text-gold">

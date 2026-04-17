@@ -164,6 +164,20 @@ export default function Gallery() {
           <div className="grid gap-5 grid-cols-2 md:grid-cols-6">
             {more.map((m, i) => {
               const isWide = m.shape === "wide";
+              // The third square (index 2) would be an orphan on the 2-col
+              // mobile grid, so promote it to a full-width wide tile on mobile
+              // while keeping the original square shape on desktop.
+              const isOrphanSquare = !isWide && i === 2;
+              const colClass = isWide
+                ? "col-span-2 md:col-span-3"
+                : isOrphanSquare
+                ? "col-span-2 md:col-span-2"
+                : "col-span-1 md:col-span-2";
+              const aspectClass = isWide
+                ? "aspect-[16/9]"
+                : isOrphanSquare
+                ? "aspect-[16/9] md:aspect-square"
+                : "aspect-square";
               return (
                 <motion.div
                   key={m.src}
@@ -171,17 +185,9 @@ export default function Gallery() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.6, delay: i * 0.06 }}
-                  className={`group relative overflow-hidden rounded-2xl shadow-soft ${
-                    isWide
-                      ? "col-span-2 md:col-span-3"
-                      : "col-span-1 md:col-span-2"
-                  }`}
+                  className={`group relative overflow-hidden rounded-2xl shadow-soft ${colClass}`}
                 >
-                  <div
-                    className={`relative ${
-                      isWide ? "aspect-[16/9]" : "aspect-square"
-                    }`}
-                  >
+                  <div className={`relative ${aspectClass}`}>
                     <Image
                       src={m.src}
                       alt={m.title}
